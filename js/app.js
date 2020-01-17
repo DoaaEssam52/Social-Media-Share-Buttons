@@ -58,6 +58,7 @@ function whatsAppShare(id) {
   if (isMobile) 
   {
     window.location.href = "whatsapp://send?text=" + txt.textContent,false;
+    window.alert("leh")
   } 
 }
 
