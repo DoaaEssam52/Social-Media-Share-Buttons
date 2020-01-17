@@ -61,4 +61,3 @@ function whatsAppShare(id) {
     window.alert("leh")
   } 
 }
-
