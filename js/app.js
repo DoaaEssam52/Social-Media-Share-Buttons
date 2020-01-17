@@ -1,6 +1,10 @@
 //js
-
-
+// هل هو هاتف
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+if(isMobile)
+{
+  document.getElementById("whatsID").style.display="block";
+}
 //  زر المشاركة الرابط علي تويتر  
 //  رقم 1
 var twitterShare = document.querySelector('[data-js="twitter-share"]');
@@ -21,9 +25,6 @@ facebookShare.onclick = function (e) {
   if (facebookWindow.focus) { facebookWindow.focus(); }
   return false;
 };
-
-
-
 //  زر المشاركة الرابط علي فيسبوك  
 //  رقم 2 
 // يفتح الموقع غي new window
@@ -51,22 +52,12 @@ var txt = document.getElementById("shareText").textContent;
 }(document, 'script', 'twitter-wjs');
 
 // زر المشاركة عبر الواتساب
-
 function whatsAppShare(id) {
   var txt = document.getElementById(id);
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) 
   {
-    window.location.href = "whatsapp://send?text=" + txt.textContent + "Link: " + document.URL,false;
+    window.location.href = "whatsapp://send?text=" + txt.textContent,false;
   } 
-  else {
-    //var whatsAppWindow = window.open('https://web.whatsapp.com://send?text=' + txt.textContent + 'Link: ' + document.URL ,"_blank");
-    window.location.href ='https://web.whatsapp.com://send?text=' + txt.textContent;
-    if (whatsAppWindow.focus)
-    {
-      whatsAppWindow.focus();
-    }
-    return false;
-  }
 }
 
