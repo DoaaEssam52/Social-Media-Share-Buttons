@@ -55,7 +55,7 @@ function whatsAppShare(id) {
   var txt = document.getElementById(id);
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
-    window.location.href = "whatsapp://send?text=" + txt.textContent + "Link: " + document.URL,true ;
+    window.location.href = "whatsapp://send?text=" + txt.textContent + "Link: " + document.URL,false;
     //window.location.href = "whatsapp://send?text=" + txt.textContent,true;
   } else {
     var whatsAppWindow = window.open('https://web.whatsapp.com://send?text=' + txt.textContent + 'Link: ' + document.URL ,"_blank");
