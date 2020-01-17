@@ -71,7 +71,4 @@ var fallbackToStore = function() {
 var openApp = function() {
   window.location.replace('twitter://');
 };
- function tst() {
-  openApp();
-  setTimeout(fallbackToStore, 250);
-}
+
