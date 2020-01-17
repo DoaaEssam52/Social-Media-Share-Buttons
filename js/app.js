@@ -60,7 +60,8 @@ function whatsAppShare(id) {
     window.location.href = "whatsapp://send?text=" + txt.textContent + "Link: " + document.URL,false;
   } 
   else {
-    var whatsAppWindow = window.open('https://web.whatsapp.com://send?text=' + txt.textContent + 'Link: ' + document.URL ,"_blank");
+    //var whatsAppWindow = window.open('https://web.whatsapp.com://send?text=' + txt.textContent + 'Link: ' + document.URL ,"_blank");
+    window.location.href ='https://web.whatsapp.com://send?text=' + txt.textContent;
     if (whatsAppWindow.focus)
     {
       whatsAppWindow.focus();
