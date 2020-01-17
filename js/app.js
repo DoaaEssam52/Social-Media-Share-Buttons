@@ -1,5 +1,4 @@
 //js
-// هل هو هاتف
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if(isMobile)
 {
@@ -25,6 +24,9 @@ facebookShare.onclick = function (e) {
   if (facebookWindow.focus) { facebookWindow.focus(); }
   return false;
 };
+
+
+
 //  زر المشاركة الرابط علي فيسبوك  
 //  رقم 2 
 // يفتح الموقع غي new window
@@ -51,12 +53,25 @@ var txt = document.getElementById("shareText").textContent;
   }
 }(document, 'script', 'twitter-wjs');
 
-// زر المشاركة عبر الواتساب
-function whatsAppShare(id) {
+//  زر المشاركة الرابط علي واتساب مع نسخ نص
+function whatsAppShare(id) 
+{
   var txt = document.getElementById(id);
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) 
   {
     window.location.href = "whatsapp://send?text=" + txt.textContent + "Link: " + document.URL , false;
   } 
+}
+
+
+var fallbackToStore = function() {
+  window.location.replace('https://play.google.com/store/apps/details?id=com.twitter.android&hl=en');
+};
+var openApp = function() {
+  window.location.replace('twitter://');
+};
+ function tst() {
+  openApp();
+  setTimeout(fallbackToStore, 250);
 }
